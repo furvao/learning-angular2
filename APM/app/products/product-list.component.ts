@@ -12,7 +12,7 @@ export class ProductListComponent implements OnInit{
     imageWidth: number = 50;
     imageMargin: number = 2;
     showImage: boolean = false;
-    listFilter: string = 'cart';
+    listFilter: string = '';
     products: IProduct[] = [
     {
         "productId": 1,
@@ -40,6 +40,10 @@ export class ProductListComponent implements OnInit{
 
     toogleImage(): void {
         this.showImage = !this.showImage;
+    }
+
+    onRatingClicked(message: string): void{
+        this.pageTitle = 'Product List: '+message;
     }
 
 }
